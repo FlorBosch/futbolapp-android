@@ -2,8 +2,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="ar.com.futbolapp.ui.activity.UserDashboardActivity">
-    <item android:id="@+id/action_example" android:title="@string/action_example"
-        app:showAsAction="withText|ifRoom" />
-    <item android:id="@+id/action_settings" android:title="@string/action_settings"
-        android:orderInCategory="100" app:showAsAction="never" />
+    <group
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/drawer_home"
+            android:checked="true"
+            android:title="@string/benches"/>
+
+        <item
+            android:id="@+id/drawer_favourite"
+            android:title="@string/configs"/>
+
+        <item
+            android:id="@+id/drawer_settings"
+            android:title="@string/profile"/>
+
+    </group>
 </menu>

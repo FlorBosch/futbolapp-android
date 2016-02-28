@@ -1,9 +1,13 @@
 package ar.com.futbolapp.ui.activity;
 
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.view.Menu;
 import android.view.MenuItem;
+import android.view.SubMenu;
+import android.widget.Toast;
 
 import ar.com.futbolapp.R;
 import ar.com.futbolapp.flows.NavigationFlow;
@@ -16,6 +20,7 @@ public class UserDashboardActivity extends BaseActivity {
 
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle toggle;
+    NavigationView navigationView;
 
     @Flow
     public NavigationFlow flow;
@@ -28,6 +33,9 @@ public class UserDashboardActivity extends BaseActivity {
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
+        navigationView = (NavigationView) findViewById(R.id.navigation_view);
+        setUpNavigationView();
+
         toggle = new ActionBarDrawerToggle(
                 this,
                 drawerLayout,
@@ -36,6 +44,30 @@ public class UserDashboardActivity extends BaseActivity {
         };
         drawerLayout.setDrawerListener(toggle);
         toggle.syncState();
+
+    }
+
+    private void setUpNavigationView() {
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+
+            @Override
+            public boolean onNavigationItemSelected(MenuItem menuItem) {
+                if(menuItem.isChecked()) {
+                    menuItem.setChecked(false);
+                } else {
+                    menuItem.setChecked(true);
+                }
+
+                drawerLayout.closeDrawers();
+
+                switch (menuItem.getItemId()){
+                    default:
+                        flow.jumpToBench(null);
+                        return true;
+
+                }
+            }
+        });
     }
 
 

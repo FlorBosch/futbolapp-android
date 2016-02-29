@@ -20,4 +20,7 @@
     <string name="profile">Profile</string>
     <string name="configs">Preferences</string>
     <string name="benches">Benches</string>
+
+    <string name="label_player_name">Jugador</string>
+    <string name="label_player_average">Promedio</string>
 </resources>

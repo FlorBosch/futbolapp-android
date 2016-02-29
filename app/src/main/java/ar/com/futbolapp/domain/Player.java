@@ -3,7 +3,8 @@ package ar.com.futbolapp.domain;
 /**
  * Created by Ignacio on 28/02/2016.
  */
-public class Player {
+public class Player extends Entity {
+
     private String name;
     private float average;
 

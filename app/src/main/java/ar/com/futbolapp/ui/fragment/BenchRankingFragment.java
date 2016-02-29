@@ -39,8 +39,6 @@ public class BenchRankingFragment extends BaseFragment {
                              Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         View fragment = inflater.inflate(R.layout.fragment_bench_ranking, container, false);
-        //TODO: this should come on the activity sequence start
-        benchFlow.setCurrentBenchId(1l);
         return fragment;
     }
 

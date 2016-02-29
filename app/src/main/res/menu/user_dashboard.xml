@@ -2,21 +2,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="ar.com.futbolapp.ui.activity.UserDashboardActivity">
-    <group
-        android:checkableBehavior="single">
+    <item
+        android:id="@+id/drawer_benches"
+        android:title="@string/benches"
+        android:icon="@drawable/ic_settings_black_18dp">
+        <menu>
+            <group android:checkableBehavior="single">
+            </group>
+        </menu>
+    </item>
+    <item
+        android:id="@+id/drawer_settings"
+        android:title="@string/settings"
+        android:icon="@drawable/ic_settings_black_18dp"/>
 
-        <item
-            android:id="@+id/drawer_home"
-            android:checked="true"
-            android:title="@string/benches"/>
-
-        <item
-            android:id="@+id/drawer_favourite"
-            android:title="@string/configs"/>
-
-        <item
-            android:id="@+id/drawer_settings"
-            android:title="@string/profile"/>
-
-    </group>
+    <item
+        android:id="@+id/drawer_profile"
+        android:title="@string/profile"
+        android:icon="@drawable/ic_person_black_18dp"/>
 </menu>

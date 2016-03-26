@@ -1,38 +1,22 @@
 package ar.com.futbolapp.ui.activity;
 
 import android.os.Bundle;
-import android.preference.PreferenceFragment;
-import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
-import android.view.MenuItem;
 
 import ar.com.futbolapp.R;
+import ar.com.futbolapp.flows.ProfileFlow;
+import flowengine.annotations.flow.FEActivity;
 
-public class ProfileActivity extends AppCompatPreferenceActivity {
+@FEActivity(ProfileFlow.class)
+public class ProfileActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setupActionBar();
-        addPreferencesFromResource(R.xml.pref_profile);
-    }
-
-    private void setupActionBar() {
+        setContentView(R.layout.activity_item_detail);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            NavUtils.navigateUpFromSameTask(this);
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    protected boolean isValidFragment(String fragmentName) {
-        return PreferenceFragment.class.getName().equals(fragmentName);
     }
 }

@@ -32,15 +32,16 @@
         </activity>
         <activity
             android:name=".ui.activity.BenchActivity"
-            android:label="@string/benches"></activity>
+            android:label="@string/benches" />
         <activity
-            android:parentActivityName=".ui.activity.UserDashboardActivity"
             android:name=".ui.activity.SettingsActivity"
-            android:label="@string/title_activity_settings"></activity>
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".ui.activity.UserDashboardActivity" />
         <activity
-            android:parentActivityName=".ui.activity.UserDashboardActivity"
             android:name=".ui.activity.ProfileActivity"
-            android:label="@string/title_activity_settings"></activity>
+            android:label="@string/profile"
+            android:parentActivityName=".ui.activity.UserDashboardActivity">
+        </activity>
     </application>
 
 </manifest>

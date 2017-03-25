@@ -15,7 +15,7 @@
 
 
     <!-- Strings related to Dashboard -->
-    <string name="title_activity_user_dashboard">Dashboard</string>
+    <string name="title_activity_user_dashboard">Panel general</string>
 
 
     <!-- Strings related to Settings -->
@@ -31,10 +31,10 @@
     <string name="pref_title_ringtone">Ringtone</string>
     <string name="pref_ringtone_silent">Silencio</string>
     <string name="pref_title_vibrate">Vibrar</string>
-    <string name="pref_title_new_event_notifications">Notificationes de eventos</string>
+    <string name="pref_title_new_event_notifications">Notificaciones de eventos</string>
     <string name="pref_title_notifications">Permitir notificaciones</string>
-    <string name="pref_title_new_stats_notifications">Notifications de stats</string>
-    <string name="pref_title_notification_types">Tipos de Notification</string>
+    <string name="pref_title_new_stats_notifications">Notificaciones de stats</string>
+    <string name="pref_title_notification_types">Tipos de Notificaciones</string>
     <string name="pref_title_notification_settigs">Preferencias</string>
 
     <!-- Account settings -->

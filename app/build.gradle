@@ -11,7 +11,7 @@ android {
     buildToolsVersion '23.0.2'
     defaultConfig {
         applicationId "ar.com.futbolapp"
-        minSdkVersion 11
+        minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -40,4 +40,7 @@ dependencies {
     compile 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
     compile 'com.android.support:support-v4:23.1.1'
     compile 'com.android.support:recyclerview-v7:23.1.1'
+    compile 'com.auth0.android:lock:1.13.+'
+    compile 'com.auth0.android:lock-facebook:2.0.+'
+    compile 'com.auth0.android:lock-googleplus:2.0.+'
 }

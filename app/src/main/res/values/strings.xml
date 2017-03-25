@@ -1,26 +1,72 @@
 <resources>
     <string name="app_name">FutbolApp</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Preferencias</string>
     <string name="facebook_app_id">503492083170820</string>
-    <string name="title_activity_user_main">UserMainActivity</string>
-    <string name="title_activity_user_dashboard">Dashboard</string>
 
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
-
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-
-    <string name="action_example">Example action</string>
-
-<!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="profile">Profile</string>
+
+    <!-- Navigation -->
+    <string name="navigation_drawer_open">Abrir</string>
+    <string name="navigation_drawer_close">Cerrar</string>
+    <string name="profile">Perfil</string>
+    <string name="benches">Bancos de jugadores</string>
+    <string name="settings">Preferencias</string>
+    <string name="create_bench">nuevo banco de jugadores</string>
+
+
     <string name="configs">Preferences</string>
-    <string name="benches">Benches</string>
 
     <string name="label_player_name">Jugador</string>
     <string name="label_player_average">Promedio</string>
+
+    <!-- Strings related to Dashboard -->
+    <string name="title_activity_user_dashboard">Panel general</string>
+
+
+    <!-- Strings related to Settings -->
+    <string name="title_activity_settings">Preferencias</string>
+    <!-- General settings -->
+    <string name="pref_header_general">General</string>
+    <string name="pref_general_about">Acerca de</string>
+    <string name="pref_general_terms_and_conditions">Términos y Condiciones</string>
+    <string name="pref_general_faq">Pregutas frecuentes</string>
+
+    <!-- Settings for Notifications -->
+    <string name="pref_header_notifications">Notificaciones</string>
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silencio</string>
+    <string name="pref_title_vibrate">Vibrar</string>
+    <string name="pref_title_new_event_notifications">Notificaciones de eventos</string>
+    <string name="pref_title_notifications">Permitir notificaciones</string>
+    <string name="pref_title_new_stats_notifications">Notificaciones de stats</string>
+    <string name="pref_title_notification_types">Tipos de Notificaciones</string>
+    <string name="pref_title_notification_settigs">Preferencias</string>
+
+    <!-- Account settings -->
+    <string name="pref_header_account">Cuenta</string>
+    <string name="pref_delete_account">Borrar cuenta</string>
+    <string name="pref_delete_account_message">¿Está seguro que desea borrar su cuenta?</string>
+    <string name="yes">Si</string>
+    <string name="no">No</string>
+
+    <!-- (Edit) Profile -->
+    <string name="edit_profile_display_name">Nombre para mostrar</string>
+    <string name="edit_profile_sex">Sexo</string>
+    <string name="male">Hombre</string>
+    <string name="female">Mujer</string>
+    <string name="edit_profile_height">Altura</string>
+    <string name="edit_profile_weight">Peso</string>
+    <string name="edit_profile_date_of_birth">Fecha de nacimiento</string>
+    <string name="dialog_close_button">Aceptar</string>
+    <string name="profile_age">Edad</string>
+
+    <!-- Profile -->
+    <string name="profile_general">General</string>
+    <string name="profile_stats">Stats</string>
+    <string name="profile_achivements">Logros</string>
+
+    <!-- Menues -->
+    <string name="action_save">Save</string>
+    <string name="action_edit">Edit</string>
+
 </resources>

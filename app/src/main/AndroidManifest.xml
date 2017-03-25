@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="ar.com.futbolapp" >
+    package="ar.com.futbolapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -9,31 +9,54 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
-
-        <meta-data
-            android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id" />
-        <meta-data
-            android:name="com.auth0.lock.client-id"
-            android:value="VE41FsxEbp68vgfIEBHPvwtX9wLud1OE" />
-        <meta-data
-            android:name="com.auth0.lock.domain-url"
-            android:value="imgaray.auth0.com" />
-
-        <!-- Auth0 Lock End -->
+        android:theme="@style/AppTheme">
         <activity
-            android:name=".ui.activity.UserDashboardActivity"
-            android:label="@string/title_activity_user_dashboard" >
+            android:name="com.auth0.lock.LockActivity"
+            android:theme="@style/Lock.Theme"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="a0furdbtxd9cjs9kydljubomyuigndtjyi" android:host="pangelani.auth0.com"/>
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.BenchActivity"
-            android:label="@string/benches">
+        <meta-data android:name="com.auth0.lock.client-id" android:value="fuRDBtxD9CJS9kYdLJubOMyUigndTjyi"/>
+        <meta-data android:name="com.auth0.lock.domain-url" android:value="pangelani.auth0.com"/>
 
+        <!-- Facebook config -->
+        <activity android:name="com.facebook.FacebookActivity"
+            android:configChanges=
+                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:label="@string/app_name" />
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+
+        <!-- Google+ Config -->
+        <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+        <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+
+        <!--Auth0 Lock End-->
+
+        <activity
+            android:name=".ui.activity.UserDashboardActivity"
+            android:label="@string/title_activity_user_dashboard">
+        </activity>
+        <activity
+            android:name=".ui.activity.BenchActivity"
+            android:label="@string/benches" />
+        <activity
+            android:name=".ui.activity.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".ui.activity.UserDashboardActivity" />
+        <activity
+            android:name=".ui.activity.ProfileActivity"
+            android:label="@string/profile"
+            android:parentActivityName=".ui.activity.UserDashboardActivity">
         </activity>
     </application>
 

@@ -15,7 +15,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     @Override
     protected void onStart() {
-        super.onResume();
+        super.onStart();
         FlowEngine.start(this);
     }
 

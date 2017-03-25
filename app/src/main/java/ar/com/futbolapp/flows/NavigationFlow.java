@@ -2,6 +2,8 @@ package ar.com.futbolapp.flows;
 
 import ar.com.futbolapp.R;
 import ar.com.futbolapp.ui.activity.BenchActivity;
+import ar.com.futbolapp.ui.activity.ProfileActivity;
+import ar.com.futbolapp.ui.activity.SettingsActivity;
 import ar.com.futbolapp.ui.fragment.DashboardFragment;
 import flowengine.Flow;
 import flowengine.annotations.flow.FlowSteps;
@@ -20,7 +22,12 @@ import flowengine.annotations.flow.parameters.Argument;
 @StepContainer(R.id.container)
 public interface NavigationFlow extends Flow {
 
-
     @Jump(BenchActivity.class)
     void jumpToBench(@Argument("id") Long id);
+
+    @Jump(SettingsActivity.class)
+    void editSettings();
+
+    @Jump(ProfileActivity.class)
+    void editProfile();
 }

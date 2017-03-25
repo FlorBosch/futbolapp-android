@@ -48,26 +48,37 @@ public class UserDashboardActivity extends BaseActivity {
     }
 
     private void setUpNavigationView() {
+        Menu menu = navigationView.getMenu().getItem(0).getSubMenu();
+        addBenches(menu);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
 
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
-                if(menuItem.isChecked()) {
-                    menuItem.setChecked(false);
-                } else {
-                    menuItem.setChecked(true);
-                }
-
                 drawerLayout.closeDrawers();
-
                 switch (menuItem.getItemId()){
+                    case R.id.drawer_profile:
+                        flow.editProfile();
+                        return true;
+                    case  R.id.drawer_settings:
+                        flow.editSettings();
+                        return true;
                     default:
-                        flow.jumpToBench(null);
+                        flow.jumpToBench(getGroupId(menuItem.getItemId()));
                         return true;
 
                 }
             }
         });
+    }
+
+    private void addBenches(Menu menu) {
+        menu.add(Menu.NONE, 1,Menu.NONE,"Grupo 1");
+        menu.add(Menu.NONE, 2,Menu.NONE,"Grupo 2");
+        menu.add(Menu.NONE, 3,Menu.NONE, R.string.create_bench).setIcon(R.drawable.ic_add_black_18dp);
+    }
+
+    private Long getGroupId(int itemId) {
+        return itemId * 1L;
     }
 
 

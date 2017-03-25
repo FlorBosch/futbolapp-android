@@ -1,0 +1,38 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="allow_notifications"
+        android:title="@string/pref_title_notifications" />
+
+    <PreferenceCategory
+        android:title="@string/pref_title_notification_types"
+        android:dependency="allow_notifications">
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="notifications_event"
+            android:title="@string/pref_title_new_event_notifications" />
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="notifications_stats"
+            android:title="@string/pref_title_new_stats_notifications" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/pref_title_notification_settigs"
+        android:dependency="allow_notifications">
+        <RingtonePreference
+            android:defaultValue="content://settings/system/notification_sound"
+            android:key="notifications_ringtone"
+            android:ringtoneType="notification"
+            android:title="@string/pref_title_ringtone" />
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="notifications_vibrate"
+            android:title="@string/pref_title_vibrate" />
+    </PreferenceCategory>
+
+
+</PreferenceScreen>

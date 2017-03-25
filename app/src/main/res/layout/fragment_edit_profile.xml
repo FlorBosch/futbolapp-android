@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/edit_profile_display_name"
+            android:id="@+id/etDisplayName" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp">
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ar.com.futbolapp.ui.component.ClickToPickDateEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.AppCompat.Spinner.Underlined"
+                android:textSize="@dimen/abc_text_size_medium_material"
+                android:hint="@string/edit_profile_date_of_birth"
+                android:id="@+id/etDateOfBirth" />
+        </android.support.design.widget.TextInputLayout>
+
+    </LinearLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp">
+
+        <ar.com.futbolapp.ui.component.ClickToSelectEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            android:textSize="@dimen/abc_text_size_medium_material"
+            android:id="@+id/ddSex"
+            android:hint="@string/edit_profile_sex"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:hint="@string/edit_profile_height"
+                android:id="@+id/etHeight" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:textColor="@color/primary_text_default_material_light"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="m."
+            android:id="@+id/lblHeightUnit"
+            android:gravity="bottom"
+            android:layout_marginRight="16dp"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/edit_profile_weight"
+                android:inputType="numberDecimal"
+                android:id="@+id/etWeight" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:textColor="@color/primary_text_default_material_light"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Kg."
+            android:id="@+id/lblWeightUnit"
+            android:gravity="bottom"
+            android:layout_marginRight="16dp"/>
+    </LinearLayout>
+
+
+</LinearLayout>

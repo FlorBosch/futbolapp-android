@@ -1,0 +1,15 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Preference
+        android:title="@string/pref_general_about">
+        <intent android:action="ar.com.futbolapp.ui.activity.AboutActivity"/>
+    </Preference>
+    <Preference
+        android:title="@string/pref_general_faq">
+        <intent android:action="ar.com.futbolapp.ui.activity.FAQActivity"/>
+    </Preference>
+    <Preference
+        android:title="@string/pref_general_terms_and_conditions">
+        <intent android:action="ar.com.futbolapp.ui.activity.TermsAndConditonsActivity"/>
+    </Preference>
+</PreferenceScreen>

@@ -6,24 +6,14 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.SubMenu;
-import android.widget.Toast;
 
 import ar.com.futbolapp.R;
-import ar.com.futbolapp.flows.NavigationFlow;
-import ar.com.futbolapp.ui.fragment.NavigationDrawerFragment;
-import flowengine.annotations.flow.FEActivity;
-import flowengine.annotations.flow.Flow;
 
-@FEActivity(NavigationFlow.class)
 public class UserDashboardActivity extends BaseActivity {
 
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle toggle;
     NavigationView navigationView;
-
-    @Flow
-    public NavigationFlow flow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,25 +40,6 @@ public class UserDashboardActivity extends BaseActivity {
     private void setUpNavigationView() {
         Menu menu = navigationView.getMenu().getItem(0).getSubMenu();
         addBenches(menu);
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-
-            @Override
-            public boolean onNavigationItemSelected(MenuItem menuItem) {
-                drawerLayout.closeDrawers();
-                switch (menuItem.getItemId()){
-                    case R.id.drawer_profile:
-                        flow.editProfile();
-                        return true;
-                    case  R.id.drawer_settings:
-                        flow.editSettings();
-                        return true;
-                    default:
-                        flow.jumpToBench(getGroupId(menuItem.getItemId()));
-                        return true;
-
-                }
-            }
-        });
     }
 
     private void addBenches(Menu menu) {
@@ -81,10 +52,6 @@ public class UserDashboardActivity extends BaseActivity {
         return itemId * 1L;
     }
 
-
-    public void onNavigationDrawerItemSelected(int position) {
-        flow.jumpToBench(null);
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

@@ -9,13 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import ar.com.futbolapp.R;
-import ar.com.futbolapp.flows.ProfileFlow;
-import flowengine.annotations.flow.Flow;
 
 public class ProfileFragment extends BaseFragment {
-
-    @Flow
-    ProfileFlow flow;
 
     public ProfileFragment() {
     }
@@ -41,7 +36,6 @@ public class ProfileFragment extends BaseFragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.action_edit) {
-            flow.next();
             return true;
         }
         return super.onOptionsItemSelected(item);

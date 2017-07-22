@@ -2,15 +2,11 @@ package ar.com.futbolapp.ui;
 
 import android.app.Application;
 
-import ar.com.futbolapp.webservice.BenchWebService;
-import ar.com.futbolapp.webservice.mocks.BenchWebServiceMock;
 import com.auth0.core.Strategies;
 import com.auth0.facebook.FacebookIdentityProvider;
 import com.auth0.googleplus.GooglePlusIdentityProvider;
 import com.auth0.lock.Lock;
 import com.auth0.lock.LockProvider;
-import flowengine.AppConfigurator;
-import flowengine.FlowEngine;
 
 public class FutbolAppApplication extends Application implements LockProvider{
 
@@ -18,22 +14,6 @@ public class FutbolAppApplication extends Application implements LockProvider{
 
     public void onCreate() {
         super.onCreate();
-        FlowEngine.initApp(new AppConfigurator() {
-            @Override
-            public void createWebAdapters() {
-
-            }
-
-            @Override
-            public void createWebServices() {
-
-            }
-
-            @Override
-            public void registerSingletons() {
-                registerSingleton(BenchWebService.class, BenchWebServiceMock.class);
-            }
-        });
         lock = new Lock.Builder()
                 .loadFromApplication(this)
                 .withIdentityProvider(Strategies.Facebook, new FacebookIdentityProvider(this))

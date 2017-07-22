@@ -8,8 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import flowengine.FlowEngine;
-
 public abstract class BaseFragment extends Fragment {
 
     protected String TAG = "BaseFragment";
@@ -17,20 +15,17 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        FlowEngine.init(this, savedInstanceState);
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = super.onCreateView(inflater, container, savedInstanceState);
-        FlowEngine.createViews(this);
         return view;
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        FlowEngine.destroyViews(this);
     }
 }

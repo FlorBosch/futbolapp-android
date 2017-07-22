@@ -9,15 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import ar.com.futbolapp.R;
-import ar.com.futbolapp.flows.ProfileFlow;
 import ar.com.futbolapp.model.Gender;
 import ar.com.futbolapp.ui.component.ClickToSelectEditText;
-import flowengine.annotations.flow.Flow;
 
 public class EditProfileFragment extends BaseFragment {
-
-    @Flow
-    ProfileFlow flow;
 
     ClickToSelectEditText<Gender> ddSex;
     ClickToSelectEditText<Gender> etDateOfBirth;
@@ -55,7 +50,6 @@ public class EditProfileFragment extends BaseFragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.action_edit) {
-            flow.next();
             return true;
         }
         return super.onOptionsItemSelected(item);

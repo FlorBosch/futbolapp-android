@@ -1,7 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="ar.com.futbolapp.ui.activity.UserDashboardActivity">
+    tools:context="ar.com.futbolapp.ui.main.UserDashboardActivity">
     <item
         android:id="@+id/drawer_benches"
         android:title="@string/benches"

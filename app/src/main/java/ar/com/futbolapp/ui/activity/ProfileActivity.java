@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 
 import ar.com.futbolapp.R;
+import ar.com.futbolapp.ui.BaseActivity;
 
 public class ProfileActivity extends BaseActivity {
 

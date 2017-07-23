@@ -3,6 +3,7 @@ package ar.com.futbolapp.ui.activity;
 import android.os.Bundle;
 
 import ar.com.futbolapp.R;
+import ar.com.futbolapp.ui.BaseActivity;
 
 public class BenchActivity extends BaseActivity {
 

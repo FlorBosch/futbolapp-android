@@ -9,12 +9,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import javax.inject.Inject;
+
 import ar.com.futbolapp.R;
 import ar.com.futbolapp.ui.BaseActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class UserDashboardActivity extends BaseActivity {
+public class UserDashboardActivity extends BaseActivity implements UserDashboardView {
 
     @BindView(R.id.drawer_layout)
     DrawerLayout drawerLayout;
@@ -27,11 +29,16 @@ public class UserDashboardActivity extends BaseActivity {
     @BindView(R.id.toolbar)
     Toolbar toolbar;
 
+    @Inject
+    UserDashboardPresenter mPresenter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_dashboard);
+        activityComponent().inject(this);
         ButterKnife.bind(this);
+        mPresenter.attachView(this);
         setSupportActionBar(toolbar);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this,
@@ -43,6 +50,12 @@ public class UserDashboardActivity extends BaseActivity {
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(item -> false);
         setUpNavigationView();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mPresenter.detachView();
     }
 
     private void setUpNavigationView() {

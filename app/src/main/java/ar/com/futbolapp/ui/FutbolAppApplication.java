@@ -1,6 +1,7 @@
 package ar.com.futbolapp.ui;
 
 import android.app.Application;
+import android.content.Context;
 
 import com.auth0.core.Strategies;
 import com.auth0.facebook.FacebookIdentityProvider;
@@ -8,8 +9,13 @@ import com.auth0.googleplus.GooglePlusIdentityProvider;
 import com.auth0.lock.Lock;
 import com.auth0.lock.LockProvider;
 
+import ar.com.futbolapp.injection.component.ApplicationComponent;
+import ar.com.futbolapp.injection.component.DaggerApplicationComponent;
+import ar.com.futbolapp.injection.module.ApplicationModule;
+
 public class FutbolAppApplication extends Application implements LockProvider{
 
+    private ApplicationComponent mApplicationComponent;
     private Lock lock;
 
     public void onCreate() {
@@ -28,4 +34,18 @@ public class FutbolAppApplication extends Application implements LockProvider{
     public Lock getLock() {
         return lock;
     }
+
+    public static FutbolAppApplication get(Context context) {
+        return (FutbolAppApplication) context.getApplicationContext();
+    }
+
+    public ApplicationComponent getComponent() {
+        if (mApplicationComponent == null) {
+            mApplicationComponent = DaggerApplicationComponent.builder()
+                    .applicationModule(new ApplicationModule(this))
+                    .build();
+        }
+        return mApplicationComponent;
+    }
+
 }

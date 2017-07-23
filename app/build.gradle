@@ -39,7 +39,8 @@ android {
 
 dependencies {
     final SUPPORT_LIBRARY_VERSION = '25.3.1'
-    final BUTTERKNIFE_VERSION = '8.4.0'
+    final BUTTER_KNIFE_VERSION = '8.4.0'
+    final DAGGER = "2.7"
 
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile "com.android.support:appcompat-v7:$SUPPORT_LIBRARY_VERSION"
@@ -52,6 +53,8 @@ dependencies {
     compile 'com.auth0.android:lock-googleplus:2.0.0'
     compile 'io.reactivex:rxandroid:1.2.1'
     compile 'io.reactivex:rxjava:1.1.6'
-    compile "com.jakewharton:butterknife:$BUTTERKNIFE_VERSION"
-    annotationProcessor "com.jakewharton:butterknife-compiler:$BUTTERKNIFE_VERSION"
+    compile "com.jakewharton:butterknife:$BUTTER_KNIFE_VERSION"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$BUTTER_KNIFE_VERSION"
+    compile "com.google.dagger:dagger:$DAGGER"
+    annotationProcessor "com.google.dagger:dagger-compiler:$DAGGER"
 }

@@ -30,7 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/Widget.AppCompat.Spinner.Underlined"
-                android:textSize="@dimen/abc_text_size_medium_material"
+                android:textSize="18sp"
                 android:hint="@string/edit_profile_date_of_birth"
                 android:id="@+id/etDateOfBirth" />
         </android.support.design.widget.TextInputLayout>
@@ -46,7 +46,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/Widget.AppCompat.Spinner.Underlined"
-            android:textSize="@dimen/abc_text_size_medium_material"
+            android:textSize="18sp"
             android:id="@+id/ddSex"
             android:hint="@string/edit_profile_sex"/>
 
@@ -75,12 +75,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="48dp"
-            android:textColor="@color/primary_text_default_material_light"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="m."
             android:id="@+id/lblHeightUnit"
             android:gravity="bottom"
-            android:layout_marginRight="16dp"/>
+            android:layout_marginEnd="16dp"/>
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -99,12 +97,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="48dp"
-            android:textColor="@color/primary_text_default_material_light"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Kg."
             android:id="@+id/lblWeightUnit"
             android:gravity="bottom"
-            android:layout_marginRight="16dp"/>
+            android:layout_marginEnd="16dp"/>
     </LinearLayout>
 
 

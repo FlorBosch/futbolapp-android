@@ -4,17 +4,17 @@
 
     <header
         android:fragment="ar.com.futbolapp.ui.activity.SettingsActivity$GeneralPreferenceFragment"
-        android:icon="@drawable/ic_info_grey_500_24dp"
+        android:icon="@drawable/ic_info"
         android:title="@string/pref_header_general" />
 
     <header
         android:fragment="ar.com.futbolapp.ui.activity.SettingsActivity$NotificationPreferenceFragment"
-        android:icon="@drawable/ic_notifications_grey_500_24dp"
+        android:icon="@drawable/ic_notifications"
         android:title="@string/pref_header_notifications" />
 
     <header
         android:fragment="ar.com.futbolapp.ui.activity.SettingsActivity$AccountPreferenceFragment"
-        android:icon="@drawable/ic_account_circle_grey_500_24dp"
+        android:icon="@drawable/ic_account_circle"
         android:title="@string/pref_header_account" />
 
 </preference-headers>

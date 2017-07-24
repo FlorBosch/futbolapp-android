@@ -1,7 +1,7 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:weightSum="1">
 
@@ -23,6 +23,7 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:baselineAligned="false"
         android:layout_gravity="center_horizontal">
 
         <LinearLayout
@@ -40,9 +41,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="48dp"
-                    android:textColor="@color/primary_text_disabled_material_light"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:paddingRight="16dp"
+                    android:layout_marginEnd="16dp"
                     android:text="@string/edit_profile_sex"
                     android:id="@+id/lblSex"
                     android:gravity="center_vertical"/>
@@ -50,7 +50,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="48dp"
-                    android:textColor="@color/primary_text_default_material_light"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:text="@string/male"
                     android:id="@+id/tvSex"
@@ -66,9 +65,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="48dp"
-                    android:textColor="@color/primary_text_disabled_material_light"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:paddingRight="16dp"
+                    android:layout_marginEnd="16dp"
                     android:text="@string/profile_age"
                     android:id="@+id/lblAge"
                     android:gravity="center_vertical"/>
@@ -76,9 +74,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="48dp"
-                    android:textColor="@color/primary_text_default_material_light"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="24 años"
                     android:id="@+id/tvAge"
                     android:gravity="center_vertical"
                     />
@@ -100,9 +96,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="48dp"
-                    android:textColor="@color/primary_text_disabled_material_light"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:paddingRight="16dp"
+                    android:layout_marginEnd="16dp"
                     android:text="@string/edit_profile_height"
                     android:id="@+id/lblHeight"
                     android:gravity="center_vertical"/>
@@ -110,18 +105,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="48dp"
-                    android:textColor="@color/primary_text_default_material_light"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="1.70"
+                    tools:text="1.70"
                     android:id="@+id/tvHeight"
                     android:gravity="center_vertical"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="48dp"
-                    android:textColor="@color/primary_text_disabled_material_light"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="m."
                     android:id="@+id/lblHeightUnit"
                     android:gravity="center_vertical"/>
             </LinearLayout>
@@ -134,9 +126,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="48dp"
-                    android:textColor="@color/primary_text_disabled_material_light"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:paddingRight="16dp"
+                    android:layout_marginEnd="16dp"
                     android:text="@string/edit_profile_weight"
                     android:id="@+id/lblWeight"
                     android:gravity="center_vertical"/>
@@ -144,18 +135,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="48dp"
-                    android:textColor="@color/primary_text_default_material_light"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="69"
                     android:id="@+id/tvWeight"
                     android:gravity="center_vertical"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="48dp"
-                    android:textColor="@color/primary_text_disabled_material_light"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Kg."
                     android:id="@+id/lblWeightUnit"
                     android:gravity="center_vertical"/>
             </LinearLayout>
@@ -184,8 +171,7 @@
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:layout_margin="20dp"
-        android:layout_gravity="center_horizontal"
-        android:background="@color/material_grey_100">
+        android:layout_gravity="center_horizontal">
 
     </FrameLayout>
 

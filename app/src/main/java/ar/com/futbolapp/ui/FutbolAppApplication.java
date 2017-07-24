@@ -13,7 +13,7 @@ import ar.com.futbolapp.injection.component.ApplicationComponent;
 import ar.com.futbolapp.injection.component.DaggerApplicationComponent;
 import ar.com.futbolapp.injection.module.ApplicationModule;
 
-public class FutbolAppApplication extends Application implements LockProvider{
+public class FutbolAppApplication extends Application implements LockProvider {
 
     private ApplicationComponent mApplicationComponent;
     private Lock lock;

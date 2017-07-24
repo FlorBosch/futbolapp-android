@@ -1,11 +1,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="ar.com.futbolapp.ui.main.UserDashboardActivity">
     <item
         android:id="@+id/drawer_benches"
         android:title="@string/benches"
-        android:icon="@drawable/ic_settings_black_18dp">
+        android:icon="@drawable/ic_settings">
         <menu>
             <group android:checkableBehavior="single">
             </group>
@@ -14,10 +13,10 @@
     <item
         android:id="@+id/drawer_settings"
         android:title="@string/settings"
-        android:icon="@drawable/ic_settings_black_18dp"/>
+        android:icon="@drawable/ic_settings"/>
 
     <item
         android:id="@+id/drawer_profile"
         android:title="@string/profile"
-        android:icon="@drawable/ic_person_black_18dp"/>
+        android:icon="@drawable/ic_person"/>
 </menu>

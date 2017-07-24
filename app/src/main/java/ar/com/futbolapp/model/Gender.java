@@ -6,7 +6,7 @@ import java.util.List;
 import ar.com.futbolapp.R;
 import ar.com.futbolapp.ui.component.ClickToSelectEditText;
 
-public enum Gender implements ClickToSelectEditText.Listable{
+public enum Gender implements ClickToSelectEditText.Listable {
     MALE, FEMALE;
 
     @Override

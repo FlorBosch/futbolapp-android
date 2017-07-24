@@ -3,10 +3,15 @@
     package="ar.com.futbolapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Google+ Config -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
 
     <application
         android:name=".ui.FutbolAppApplication"
-        android:allowBackup="true"
+        android:allowBackup="false"
+        android:supportsRtl="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
@@ -34,11 +39,6 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:label="@string/app_name" />
         <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
-
-        <!-- Google+ Config -->
-        <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-        <uses-permission android:name="android.permission.USE_CREDENTIALS" />
-        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
 
         <!--Auth0 Lock End-->
 

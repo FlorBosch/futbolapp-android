@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary_material_dark">#89A02C</color>
-    <color name="primary_dark_material_dark">#112b00</color>
-    <color name="accent_material_light">#89A02C</color>
-    <color name="dividerColor">#1fffffff</color>
-    <color name="background_material_light">#ffffff</color>
+    <color name="color_primary">#89A02C</color>
+    <color name="color_primary_dark">#112b00</color>
+    <color name="color_accent">#89A02C</color>
 </resources>

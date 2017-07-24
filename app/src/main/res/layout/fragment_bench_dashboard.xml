@@ -7,21 +7,21 @@
     android:orientation="horizontal">
     <Button
         android:id="@+id/events_button"
-        android:layout_gravity="left|top"
-        android:text="Events" />
+        android:layout_gravity="start"
+        tools:text="Events" />
 
     <Button
         android:id="@+id/history_button"
-        android:layout_gravity="left|top"
-        android:text="History" />
+        android:layout_gravity="start"
+        tools:text="History" />
 
     <Button
         android:id="@+id/stats_button"
-        android:layout_gravity="left|top"
-        android:text="Stats" />
+        android:layout_gravity="start"
+        tools:text="Stats" />
 
     <Button
         android:id="@+id/ranking_button"
-        android:layout_gravity="left|top"
-        android:text="Ranking" />
+        android:layout_gravity="start"
+        tools:text="Ranking" />
 </GridLayout>

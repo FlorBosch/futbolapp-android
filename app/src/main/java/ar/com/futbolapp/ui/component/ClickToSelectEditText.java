@@ -42,7 +42,8 @@ public class ClickToSelectEditText<T extends ClickToSelectEditText.Listable> ext
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public ClickToSelectEditText(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public ClickToSelectEditText(Context context, AttributeSet attrs, int defStyleAttr,
+                                 int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
 
         mHint = getHint();
@@ -73,7 +74,7 @@ public class ClickToSelectEditText<T extends ClickToSelectEditText.Listable> ext
             @Override
             public boolean onLongClick(View v) {
                 ClickToSelectEditText.this.onClick(v);
-                return true ;
+                return true;
             }
         });
         setOnClickListener(new OnClickListener() {
@@ -93,7 +94,8 @@ public class ClickToSelectEditText<T extends ClickToSelectEditText.Listable> ext
                 setText(mListableItems[selectedIndex]);
 
                 if (onItemSelectedListener != null) {
-                    onItemSelectedListener.onItemSelectedListener(mItems.get(selectedIndex), selectedIndex);
+                    onItemSelectedListener.onItemSelectedListener(mItems.get(selectedIndex),
+                            selectedIndex);
                 }
             }
         });
@@ -110,6 +112,7 @@ public class ClickToSelectEditText<T extends ClickToSelectEditText.Listable> ext
     }
 
     public interface Listable {
-        @StringRes int getLabel();
+        @StringRes
+        int getLabel();
     }
 }

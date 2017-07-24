@@ -64,9 +64,10 @@ public class UserDashboardActivity extends BaseActivity implements UserDashboard
     }
 
     private void addBenches(Menu menu) {
-        menu.add(Menu.NONE, 1,Menu.NONE,"Grupo 1");
-        menu.add(Menu.NONE, 2,Menu.NONE,"Grupo 2");
-        menu.add(Menu.NONE, 3,Menu.NONE, R.string.create_bench).setIcon(R.drawable.ic_add_black_18dp);
+        menu.add(Menu.NONE, 1, Menu.NONE, "Grupo 1");
+        menu.add(Menu.NONE, 2, Menu.NONE, "Grupo 2");
+        menu.add(Menu.NONE, 3, Menu.NONE, R.string.create_bench)
+                .setIcon(R.drawable.ic_add);
     }
 
     @Override

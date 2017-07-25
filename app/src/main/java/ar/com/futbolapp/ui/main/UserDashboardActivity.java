@@ -18,7 +18,6 @@ import ar.com.futbolapp.R;
 import ar.com.futbolapp.ui.BaseActivity;
 import ar.com.futbolapp.ui.activity.ProfileActivity;
 import ar.com.futbolapp.ui.activity.SettingsActivity;
-import ar.com.futbolapp.ui.fragment.BenchDashboardFragment;
 import ar.com.futbolapp.ui.matchlist.MatchListFragment;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -68,7 +67,7 @@ public class UserDashboardActivity extends BaseActivity implements UserDashboard
     private void addTabs() {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFrag(new MatchListFragment(), "ONE");
-        adapter.addFrag(new BenchDashboardFragment(), "TWO");
+//        adapter.addFrag(new BenchDashboardFragment(), "TWO");
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
     }

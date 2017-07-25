@@ -10,14 +10,15 @@ import android.widget.TextView;
 import java.util.List;
 
 import ar.com.futbolapp.R;
+import ar.com.futbolapp.domain.Match;
 import ar.com.futbolapp.ui.BaseViewHolder;
 import butterknife.BindView;
 
 class MatchListViewAdapter extends RecyclerView.Adapter<MatchListViewAdapter.ViewHolder> {
 
-    private List<String> matches;
+    private List<Match> matches;
 
-    MatchListViewAdapter(List<String> matches) {
+    MatchListViewAdapter(List<Match> matches) {
         this.matches = matches;
     }
 
@@ -37,7 +38,7 @@ class MatchListViewAdapter extends RecyclerView.Adapter<MatchListViewAdapter.Vie
         return matches.size();
     }
 
-    class ViewHolder extends BaseViewHolder<String> {
+    class ViewHolder extends BaseViewHolder<Match> {
 
         @BindView(R.id.match_name)
         TextView nameView;
@@ -47,9 +48,9 @@ class MatchListViewAdapter extends RecyclerView.Adapter<MatchListViewAdapter.Vie
         }
 
         @Override
-        public void onBindView(String item) {
+        public void onBindView(Match item) {
             super.onBindView(item);
-            nameView.setText(item);
+            nameView.setText(item.getName());
         }
     }
 

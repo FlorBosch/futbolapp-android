@@ -2,18 +2,12 @@
     <string name="app_name">FutbolApp</string>
     <string name="facebook_app_id">503492083170820</string>
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
     <!-- Navigation -->
     <string name="navigation_drawer_open">Abrir</string>
     <string name="navigation_drawer_close">Cerrar</string>
     <string name="profile">Perfil</string>
     <string name="teams">Teams</string>
     <string name="settings">Preferencias</string>
-    <string name="create_bench">nuevo banco de jugadores</string>
-
-    <string name="label_player_name">Jugador</string>
-    <string name="label_player_average">Promedio</string>
 
     <!-- Strings related to Settings -->
     <string name="title_activity_settings">Preferencias</string>
@@ -59,6 +53,5 @@
 
     <!-- Menues -->
     <string name="action_save">Save</string>
-    <string name="action_edit">Edit</string>
 
 </resources>

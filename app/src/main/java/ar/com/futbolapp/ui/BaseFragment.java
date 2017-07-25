@@ -1,4 +1,4 @@
-package ar.com.futbolapp.ui.fragment;
+package ar.com.futbolapp.ui;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

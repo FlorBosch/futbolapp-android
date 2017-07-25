@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import ar.com.futbolapp.R;
 import ar.com.futbolapp.model.Gender;
+import ar.com.futbolapp.ui.BaseFragment;
 import ar.com.futbolapp.ui.component.ClickToSelectEditText;
 
 public class EditProfileFragment extends BaseFragment {

@@ -1,9 +1,12 @@
 package ar.com.futbolapp.ui.matchlist;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 import javax.inject.Inject;
 
+import ar.com.futbolapp.domain.Match;
 import ar.com.futbolapp.ui.BasePresenter;
 
 public class MatchListPresenter extends BasePresenter<MatchListMvpView> {
@@ -18,7 +21,10 @@ public class MatchListPresenter extends BasePresenter<MatchListMvpView> {
 
     void loadMatches() {
         checkViewAttached();
-        getMvpView().displayMatches(
-                Arrays.asList("Match 1", "Match 2", "Match 3", "Match 4", "Match 5"));
+        List<Match> matches = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            matches.add(new Match("Match " + i, new Date()));
+        }
+        getMvpView().displayMatches(matches);
     }
 }

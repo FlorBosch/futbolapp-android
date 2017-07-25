@@ -16,7 +16,8 @@ import java.util.List;
 import javax.inject.Inject;
 
 import ar.com.futbolapp.R;
-import ar.com.futbolapp.ui.fragment.BaseFragment;
+import ar.com.futbolapp.domain.Match;
+import ar.com.futbolapp.ui.BaseFragment;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -61,7 +62,7 @@ public class MatchListFragment extends BaseFragment implements MatchListMvpView 
     }
 
     @Override
-    public void displayMatches(List<String> matches) {
+    public void displayMatches(List<Match> matches) {
         matchList.swapAdapter(new MatchListViewAdapter(matches), false);
     }
 

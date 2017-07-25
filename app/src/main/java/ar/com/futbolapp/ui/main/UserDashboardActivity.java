@@ -2,7 +2,9 @@ package ar.com.futbolapp.ui.main;
 
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
@@ -16,6 +18,8 @@ import ar.com.futbolapp.R;
 import ar.com.futbolapp.ui.BaseActivity;
 import ar.com.futbolapp.ui.activity.ProfileActivity;
 import ar.com.futbolapp.ui.activity.SettingsActivity;
+import ar.com.futbolapp.ui.fragment.BenchDashboardFragment;
+import ar.com.futbolapp.ui.fragment.BenchPlayerDetailFragment;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -31,6 +35,12 @@ public class UserDashboardActivity extends BaseActivity implements UserDashboard
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
+
+    @BindView(R.id.view_pager)
+    ViewPager viewPager;
+
+    @BindView(R.id.tabs)
+    TabLayout tabLayout;
 
     @Inject
     UserDashboardPresenter presenter;
@@ -52,6 +62,15 @@ public class UserDashboardActivity extends BaseActivity implements UserDashboard
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         setUpNavigationView();
+        addTabs();
+    }
+
+    private void addTabs() {
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        adapter.addFrag(new BenchPlayerDetailFragment(), "ONE");
+        adapter.addFrag(new BenchDashboardFragment(), "TWO");
+        viewPager.setAdapter(adapter);
+        tabLayout.setupWithViewPager(viewPager);
     }
 
     @Override

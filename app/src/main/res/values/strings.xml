@@ -8,7 +8,7 @@
     <string name="navigation_drawer_open">Abrir</string>
     <string name="navigation_drawer_close">Cerrar</string>
     <string name="profile">Perfil</string>
-    <string name="benches">Bancos de jugadores</string>
+    <string name="teams">Teams</string>
     <string name="settings">Preferencias</string>
     <string name="create_bench">nuevo banco de jugadores</string>
 

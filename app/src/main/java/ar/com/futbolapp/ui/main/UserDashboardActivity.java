@@ -6,13 +6,16 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
+import android.view.SubMenu;
+import android.widget.TextView;
 
 import javax.inject.Inject;
 
 import ar.com.futbolapp.R;
 import ar.com.futbolapp.ui.BaseActivity;
+import ar.com.futbolapp.ui.activity.ProfileActivity;
+import ar.com.futbolapp.ui.activity.SettingsActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -30,7 +33,7 @@ public class UserDashboardActivity extends BaseActivity implements UserDashboard
     Toolbar toolbar;
 
     @Inject
-    UserDashboardPresenter mPresenter;
+    UserDashboardPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +41,7 @@ public class UserDashboardActivity extends BaseActivity implements UserDashboard
         setContentView(R.layout.activity_user_dashboard);
         activityComponent().inject(this);
         ButterKnife.bind(this);
-        mPresenter.attachView(this);
+        presenter.attachView(this);
         setSupportActionBar(toolbar);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this,
@@ -48,26 +51,42 @@ public class UserDashboardActivity extends BaseActivity implements UserDashboard
                 R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
-        navigationView.setNavigationItemSelectedListener(item -> false);
         setUpNavigationView();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        mPresenter.detachView();
+        presenter.detachView();
     }
 
     private void setUpNavigationView() {
-        Menu menu = navigationView.getMenu().getItem(0).getSubMenu();
-        addBenches(menu);
+        TextView nav_user = (TextView) navigationView.getHeaderView(0)
+                .findViewById(R.id.nav_header);
+        nav_user.setText(presenter.getUsername());
+        SubMenu menu = navigationView.getMenu().getItem(0).getSubMenu();
+        for (String team : presenter.getTeams()) {
+            menu.add(team);
+        }
+        navigationView.setNavigationItemSelectedListener(item -> {
+                    drawerLayout.closeDrawers();
+                    switch (item.getItemId()) {
+                        case R.id.drawer_profile:
+                            startActivity(ProfileActivity.newIntent(this));
+                            return true;
+                        case R.id.drawer_settings:
+                            startActivity(SettingsActivity.newIntent(this));
+                            return true;
+                        default:
+                            onTeamSelected(item.getItemId());
+                            return true;
+                    }
+                }
+        );
     }
 
-    private void addBenches(Menu menu) {
-        menu.add(Menu.NONE, 1, Menu.NONE, "Grupo 1");
-        menu.add(Menu.NONE, 2, Menu.NONE, "Grupo 2");
-        menu.add(Menu.NONE, 3, Menu.NONE, R.string.create_bench)
-                .setIcon(R.drawable.ic_add);
+    private void onTeamSelected(int teamIndex) {
+
     }
 
     @Override

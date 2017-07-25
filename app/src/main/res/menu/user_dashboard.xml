@@ -2,12 +2,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="ar.com.futbolapp.ui.main.UserDashboardActivity">
     <item
-        android:id="@+id/drawer_benches"
-        android:title="@string/benches"
+        android:id="@+id/teams"
+        android:title="@string/teams"
         android:icon="@drawable/ic_settings">
         <menu>
-            <group android:checkableBehavior="single">
-            </group>
+            <group android:checkableBehavior="single" />
         </menu>
     </item>
     <item

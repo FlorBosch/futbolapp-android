@@ -54,7 +54,7 @@
 
         <activity
             android:name=".ui.activity.BenchActivity"
-            android:label="@string/benches" />
+            android:label="@string/teams" />
 
         <activity
             android:name=".ui.activity.SettingsActivity"

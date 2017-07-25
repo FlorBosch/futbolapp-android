@@ -25,6 +25,10 @@ import java.util.List;
 
 public class SettingsActivity extends AppCompatPreferenceActivity {
 
+    public static Intent newIntent(Context context) {
+        return new Intent(context, SettingsActivity.class);
+    }
+
     private static Preference.OnPreferenceChangeListener sBindPreferenceSummaryToValueListener =
             (preference, value) -> {
                 String stringValue = value.toString();

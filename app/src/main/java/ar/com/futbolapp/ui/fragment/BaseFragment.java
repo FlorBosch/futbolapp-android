@@ -1,32 +1,23 @@
 package ar.com.futbolapp.ui.fragment;
 
-
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+
+import ar.com.futbolapp.injection.component.DaggerUiComponent;
+import ar.com.futbolapp.injection.component.UiComponent;
 
 public abstract class BaseFragment extends Fragment {
 
-    protected final String TAG = "BaseFragment";
+    private UiComponent uiComponent;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        uiComponent = DaggerUiComponent.builder().build();
     }
 
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
-        View view = super.onCreateView(inflater, container, savedInstanceState);
-        return view;
+    public UiComponent getComponent() {
+        return uiComponent;
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-    }
 }

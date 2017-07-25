@@ -19,7 +19,7 @@ import ar.com.futbolapp.ui.BaseActivity;
 import ar.com.futbolapp.ui.activity.ProfileActivity;
 import ar.com.futbolapp.ui.activity.SettingsActivity;
 import ar.com.futbolapp.ui.fragment.BenchDashboardFragment;
-import ar.com.futbolapp.ui.fragment.BenchPlayerDetailFragment;
+import ar.com.futbolapp.ui.matchlist.MatchListFragment;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -67,7 +67,7 @@ public class UserDashboardActivity extends BaseActivity implements UserDashboard
 
     private void addTabs() {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFrag(new BenchPlayerDetailFragment(), "ONE");
+        adapter.addFrag(new MatchListFragment(), "ONE");
         adapter.addFrag(new BenchDashboardFragment(), "TWO");
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
@@ -80,9 +80,8 @@ public class UserDashboardActivity extends BaseActivity implements UserDashboard
     }
 
     private void setUpNavigationView() {
-        TextView nav_user = (TextView) navigationView.getHeaderView(0)
-                .findViewById(R.id.nav_header);
-        nav_user.setText(presenter.getUsername());
+        TextView header = (TextView) navigationView.getHeaderView(0).findViewById(R.id.nav_header);
+        header.setText(presenter.getUsername());
         SubMenu menu = navigationView.getMenu().getItem(0).getSubMenu();
         for (String team : presenter.getTeams()) {
             menu.add(team);

@@ -15,7 +15,7 @@ import ar.com.futbolapp.injection.module.ApplicationModule;
 
 public class FutbolAppApplication extends Application implements LockProvider {
 
-    private ApplicationComponent mApplicationComponent;
+    private ApplicationComponent applicationComponent;
     private Lock lock;
 
     public void onCreate() {
@@ -40,12 +40,12 @@ public class FutbolAppApplication extends Application implements LockProvider {
     }
 
     public ApplicationComponent getComponent() {
-        if (mApplicationComponent == null) {
-            mApplicationComponent = DaggerApplicationComponent.builder()
+        if (applicationComponent == null) {
+            applicationComponent = DaggerApplicationComponent.builder()
                     .applicationModule(new ApplicationModule(this))
                     .build();
         }
-        return mApplicationComponent;
+        return applicationComponent;
     }
 
 }

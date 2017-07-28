@@ -11,6 +11,7 @@
 
     <string name="matches_title">Matches</string>
     <string name="players_title">Players</string>
+    <string name="profile_picture">Profile picture</string>
 
     <!-- Strings related to Settings -->
     <string name="title_activity_settings">Preferencias</string>

@@ -29,6 +29,7 @@ public class UserDashboardPresenter extends BasePresenter<UserDashboardView> {
     }
 
     void loadTeams() {
+        checkViewAttached();
         addSubscription(call(service.getTeams())
                 .subscribe(response -> {
                     teams = new ArrayList<>(response.values());

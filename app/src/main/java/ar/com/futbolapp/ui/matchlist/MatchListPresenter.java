@@ -1,5 +1,7 @@
 package ar.com.futbolapp.ui.matchlist;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -9,15 +11,13 @@ import javax.inject.Inject;
 import ar.com.futbolapp.domain.Match;
 import ar.com.futbolapp.network.FutbolappService;
 import ar.com.futbolapp.ui.BasePresenter;
-import rx.Observable;
-import rx.Subscription;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Func1;
-import rx.schedulers.Schedulers;
+
+import static ar.com.futbolapp.util.NetworkUtil.call;
 
 public class MatchListPresenter extends BasePresenter<MatchListMvpView> {
 
     private final FutbolappService service;
+    private List<Match> matchList;
 
     @Inject
     public MatchListPresenter(FutbolappService service) {
@@ -37,17 +37,12 @@ public class MatchListPresenter extends BasePresenter<MatchListMvpView> {
         getMvpView().displayMatches(matches);
     }
 
-    public Subscription getCityList() {
-
-        return service.getMatches()
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .onErrorResumeNext(Observable::error)
-                .subscribe(matches -> {
-
-                }, throwable -> {
-
-                });
+    public void getMatches() {
+        addSubscription(call(service.getMatches())
+                .subscribe(response -> {
+                    matchList = new ArrayList<>(response.values());
+                    getMvpView().displayMatches(matchList);
+                }, throwable -> Log.i("Error", throwable.getMessage())));
     }
 
 

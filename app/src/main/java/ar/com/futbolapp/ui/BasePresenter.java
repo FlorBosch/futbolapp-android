@@ -1,9 +1,13 @@
 package ar.com.futbolapp.ui;
 
 
+import rx.Subscription;
+import rx.subscriptions.CompositeSubscription;
+
 public class BasePresenter<T extends MvpView> implements Presenter<T> {
 
     private T mvpView;
+    private CompositeSubscription subscriptions = new CompositeSubscription();
 
     @Override
     public void attachView(T mvpView) {
@@ -12,6 +16,7 @@ public class BasePresenter<T extends MvpView> implements Presenter<T> {
 
     @Override
     public void detachView() {
+        subscriptions.clear();
         mvpView = null;
     }
 
@@ -33,5 +38,10 @@ public class BasePresenter<T extends MvpView> implements Presenter<T> {
                     " requesting data to the Presenter");
         }
     }
+
+    protected void addSubscription(Subscription subscription) {
+        subscriptions.add(subscription);
+    }
+
 }
 

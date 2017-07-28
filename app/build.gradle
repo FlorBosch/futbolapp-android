@@ -18,7 +18,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        buildConfigField "String", "BASEURL", "\"http://private-b8cf44-androidcleancode.apiary-mock.com/\""
+        buildConfigField "String", "BASEURL", "\"https://futbolapp-141619.firebaseio.com/\""
         buildConfigField "int", "CACHETIME", "432000" // 5days
     }
     buildTypes {

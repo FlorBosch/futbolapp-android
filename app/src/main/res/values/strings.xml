@@ -9,6 +9,9 @@
     <string name="teams">Teams</string>
     <string name="settings">Preferencias</string>
 
+    <string name="matches_title">Matches</string>
+    <string name="players_title">Players</string>
+
     <!-- Strings related to Settings -->
     <string name="title_activity_settings">Preferencias</string>
     <!-- General settings -->

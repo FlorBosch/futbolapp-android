@@ -12,9 +12,12 @@ import android.view.MenuItem;
 import android.view.SubMenu;
 import android.widget.TextView;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import ar.com.futbolapp.R;
+import ar.com.futbolapp.domain.Team;
 import ar.com.futbolapp.ui.BaseActivity;
 import ar.com.futbolapp.ui.activity.ProfileActivity;
 import ar.com.futbolapp.ui.activity.SettingsActivity;
@@ -62,12 +65,12 @@ public class UserDashboardActivity extends BaseActivity implements UserDashboard
         toggle.syncState();
         setUpNavigationView();
         addTabs();
+        presenter.loadTeams();
     }
 
     private void addTabs() {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFrag(new MatchListFragment(), "ONE");
-//        adapter.addFrag(new BenchDashboardFragment(), "TWO");
+        adapter.addFrag(new MatchListFragment(), getString(R.string.matches_title));
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
     }
@@ -81,10 +84,6 @@ public class UserDashboardActivity extends BaseActivity implements UserDashboard
     private void setUpNavigationView() {
         TextView header = (TextView) navigationView.getHeaderView(0).findViewById(R.id.nav_header);
         header.setText(presenter.getUsername());
-        SubMenu menu = navigationView.getMenu().getItem(0).getSubMenu();
-        for (String team : presenter.getTeams()) {
-            menu.add(team);
-        }
         navigationView.setNavigationItemSelectedListener(item -> {
                     drawerLayout.closeDrawers();
                     switch (item.getItemId()) {
@@ -95,15 +94,20 @@ public class UserDashboardActivity extends BaseActivity implements UserDashboard
                             startActivity(SettingsActivity.newIntent(this));
                             return true;
                         default:
-                            onTeamSelected(item.getItemId());
+                            presenter.onTeamSelected(item.getItemId());
                             return true;
                     }
                 }
         );
     }
 
-    private void onTeamSelected(int teamIndex) {
-
+    @Override
+    public void displayTeams(List<Team> teams) {
+        SubMenu menu = navigationView.getMenu().getItem(0).getSubMenu();
+        for (Team team : teams) {
+            menu.add(team.getName());
+        }
+        presenter.onTeamSelected(0);
     }
 
     @Override

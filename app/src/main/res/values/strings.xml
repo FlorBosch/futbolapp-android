@@ -41,7 +41,7 @@
 
     <!-- (Edit) Profile -->
     <string name="edit_profile_display_name">Nombre para mostrar</string>
-    <string name="edit_profile_sex">Sexo</string>
+    <string name="profile_sex">Sexo</string>
     <string name="male">Hombre</string>
     <string name="female">Mujer</string>
     <string name="edit_profile_height">Altura</string>

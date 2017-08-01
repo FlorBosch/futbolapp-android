@@ -19,7 +19,7 @@ import javax.inject.Inject;
 import ar.com.futbolapp.R;
 import ar.com.futbolapp.domain.Team;
 import ar.com.futbolapp.ui.BaseActivity;
-import ar.com.futbolapp.ui.activity.ProfileActivity;
+import ar.com.futbolapp.ui.profile.ProfileActivity;
 import ar.com.futbolapp.ui.activity.SettingsActivity;
 import ar.com.futbolapp.ui.matchlist.MatchListFragment;
 import ar.com.futbolapp.ui.playerlist.PlayerListFragment;

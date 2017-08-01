@@ -3,13 +3,6 @@
           package="ar.com.futbolapp">
 
     <uses-permission android:name="android.permission.INTERNET"/>
-    <!-- Google+ Config -->
-    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
-    <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
-
-    <meta-data
-        android:name="com.google.android.gms.version"
-        android:value="@integer/google_play_services_version"/>
 
     <application
         android:name=".ui.FutbolAppApplication"
@@ -18,43 +11,6 @@
         android:label="@string/app_name"
         android:supportsRtl="false"
         android:theme="@style/AppTheme">
-
-        <activity
-            android:name="com.auth0.lock.LockActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"
-            android:theme="@style/Lock.Theme">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
-
-                <data
-                    android:host="pangelani.auth0.com"
-                    android:scheme="a0furdbtxd9cjs9kydljubomyuigndtjyi"/>
-            </intent-filter>
-        </activity>
-
-        <meta-data
-            android:name="com.auth0.lock.client-id"
-            android:value="fuRDBtxD9CJS9kYdLJubOMyUigndTjyi"/>
-        <meta-data
-            android:name="com.auth0.lock.domain-url"
-            android:value="pangelani.auth0.com"/>
-
-        <!-- Facebook config -->
-        <activity
-            android:name="com.facebook.FacebookActivity"
-            android:configChanges=
-                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-            android:label="@string/app_name"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
-        <meta-data
-            android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id"/>
-
-        <!--Auth0 Lock End-->
 
         <activity
             android:name=".ui.main.UserDashboardActivity"
@@ -72,9 +28,10 @@
             android:parentActivityName=".ui.main.UserDashboardActivity"/>
 
         <activity
-            android:name=".ui.activity.ProfileActivity"
+            android:name=".ui.profile.ProfileActivity"
             android:label="@string/profile"
-            android:parentActivityName=".ui.main.UserDashboardActivity">
+            android:parentActivityName=".ui.main.UserDashboardActivity"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
 
     </application>
